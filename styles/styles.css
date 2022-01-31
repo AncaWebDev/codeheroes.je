@@ -124,6 +124,8 @@ html {
     max-width: 200px;
     max-height: 200px;
     border-radius: 50%;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
 
 
@@ -156,7 +158,10 @@ html {
 
 #form{
     max-width: 500px;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
+
 /* 
 #second-reason{
     background-color: rgb(64, 168, 196);
