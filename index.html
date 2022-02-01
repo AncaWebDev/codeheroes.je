@@ -11,6 +11,7 @@
     <title>Code Heroes Jersey</title>
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
     <link rel="shortcut icon" href="./images/catlogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="jquery-3.5.1.min.js"></script>
 </head>
 
@@ -61,7 +62,7 @@
     </div>
     <div id="reasons-section">
         <div id="first-reason">
-            <div class="container">
+            <div id="first-reason-container" class="container">
                 <h2 class="text-center sections-title display-5">
                     Why should kids learn to code?
                 </h2>
@@ -215,7 +216,7 @@
             </br>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6 align-self-center d-flex justify-content-center">
-                    <img src="./images/proofile2.png" alt="Profile pic" id="profile-pic">
+                    <img src="./images/profile.jpg" alt="Profile pic" id="profile-pic">
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 align-self-center">
 
@@ -304,6 +305,26 @@
         navLinks.forEach((l) => {
             l.addEventListener('click', () => { bsCollapse.toggle() })
         })
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var element = document.querySelector('#first-reason-container');
+            var position = element.getBoundingClientRect();
+
+            // // checking whether fully visible
+            // if (position.top >= 0 && position.bottom <= window.innerHeight) {
+            //     console.log('Element is fully visible in screen');
+            //     const element = document.querySelector('#first-reason-container');
+            //     element.classList.add('animate__animated', 'animate__bounceInLeft');
+            // }
+
+            // checking for partial visibility
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                console.log('Element is partially visible in screen');
+                const element = document.querySelector('#first-reason-container');
+                element.classList.add('animate__animated', 'animate__bounceInLeft');
+            }
+        });
     </script>
     <!-- Font-awesome -->
     <script src="https://kit.fontawesome.com/beb83dfd60.js" crossorigin="anonymous"></script>
