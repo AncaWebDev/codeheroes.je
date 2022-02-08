@@ -319,12 +319,27 @@
             // }
 
             // checking for partial visibility
-            if (position.top < window.innerHeight && position.bottom >= 0) {
-                console.log('Element is partially visible in screen');
-                const element = document.querySelector('#first-reason-container');
-                element.classList.add('animate__animated', 'animate__bounceInLeft');
-            }
+            // if (position.top < window.innerHeight && position.bottom >= 0) {
+            //     console.log('Element is partially visible in screen');
+            //     const element = document.querySelector('#first-reason-container');
+            //     element.classList.add('animate__animated', 'animate__bounceInLeft');
+            // }
         });
+    </script>
+
+    <script>
+        var observer = new IntersectionObserver(function (entries) {
+            // isIntersecting is true when element and viewport are overlapping
+            // isIntersecting is false when element and viewport don't overlap
+            for (let i = 0; i < entries.length; i++)
+                if (entries[i].isIntersecting === true) {
+                    console.log
+                    const element = document.querySelector(entries[i]);
+                    element.classList.add('animate__animated', 'animate__bounceInLeft');
+                }
+        }, { threshold: [0] });
+
+        observer.observe(document.querySelector("#first-reason-container"), document.querySelector("#second-reason-container"));
     </script>
     <!-- Font-awesome -->
     <script src="https://kit.fontawesome.com/beb83dfd60.js" crossorigin="anonymous"></script>
